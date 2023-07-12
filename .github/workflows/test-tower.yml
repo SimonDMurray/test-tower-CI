@@ -1,0 +1,27 @@
+name: Test Nextflow Tower
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  run-pipeline:  
+    name: Test Nextflow Tower 
+    
+    runs-on: self-hosted
+    container:
+      image: nextflow:23.06.0-edge
+      options: --user root
+
+    steps:     
+      - name: Clean workspace before start
+        run: rm -rf $GITHUB_WORKSPACE/*
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run Pipeline
+        run : nextflow run $GITHUB_WORKSPACE/main.nf -with-tower ${{ secrets.TOWER_TOKEN }}
+
+      - name: Clean workspace after finish
+        run: rm -rf $GITHUB_WORKSPACE/*
