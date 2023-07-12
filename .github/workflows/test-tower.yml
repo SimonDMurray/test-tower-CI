@@ -8,7 +8,7 @@ jobs:
   run-pipeline:  
     name: Test Nextflow Tower 
     
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     container:
       image: nextflow:23.06.0-edge
 
