@@ -10,7 +10,7 @@ jobs:
     
     runs-on: ubuntu-latest
     container:
-      image: nextflow:23.06.0-edge
+      image: nextflow/nextflow:23.06.0-edge
 
     steps:     
       - name: Checkout repository
