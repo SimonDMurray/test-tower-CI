@@ -13,8 +13,5 @@ jobs:
       image: nextflow/nextflow:23.06.0-edge
 
     steps:     
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
       - name: Run Pipeline
         run : nextflow run $GITHUB_WORKSPACE/main.nf -with-tower ${{ secrets.TOWER_TOKEN }}
