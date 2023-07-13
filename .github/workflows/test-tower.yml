@@ -26,4 +26,4 @@ jobs:
           $SRC_DIR/nextflow
 
       - name: Run Pipeline
-        run : nextflow run $GITHUB_WORKSPACE/main.nf -with-tower ${{ secrets.TOWER_TOKEN }}
+        run : $SRC_DIR/nextflow run $GITHUB_WORKSPACE/main.nf -with-tower ${{ secrets.TOWER_TOKEN }}
