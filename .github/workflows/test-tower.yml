@@ -22,3 +22,8 @@ jobs:
       - name: install nextflow
         run: |
           wget -q https://get.nextflow.io -O $SRC_DIR/nextflow
+          chmod u+x $SRC_DIR/nextflow
+          $SRC_DIR/nextflow
+
+      - name: check nextflow installed
+        run: $SRC_DIR/nextflow -v
