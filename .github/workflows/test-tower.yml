@@ -8,8 +8,6 @@ jobs:
     name: Test Nextflow Tower 
     
     runs-on: ubuntu-latest
-    container:
-      image: nextflow/nextflow:23.06.0-edge
 
     steps:     
       - name: check git exists
