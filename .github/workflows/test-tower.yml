@@ -23,6 +23,7 @@ jobs:
         run: |
           wget -q https://get.nextflow.io -O $SRC_DIR/nextflow
           chmod u+x $SRC_DIR/nextflow
+          $SRC_DIR/nextflow -v
 
       - name: Run Pipeline
         run : $SRC_DIR/nextflow run $GITHUB_WORKSPACE/main.nf -with-tower ${{ secrets.TOWER_TOKEN }}
