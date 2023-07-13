@@ -9,12 +9,22 @@ jobs:
     
     runs-on: ubuntu-latest
 
+    env:
+      SRC_DIR: $GITHUB_WORKSPACE/src
+
     steps:     
-      - name: check git exists
-        run: which git
+      - name: build source dir
+        run: mkdir -p $SRC_DIR
 
       - name: checkout repo
         uses: actions/checkout@v3
 
-      - name: Run Pipeline
-        run : nextflow run $GITHUB_WORKSPACE/main.nf -with-tower ${{ secrets.TOWER_TOKEN }}
+      - name: install nextflow
+        run: |
+          wget -q https://get.nextflow.io -O $SRC_DIR/nextflow
+          chmod u+x $SRC_DIR/nextflow
+          $SRC_DIR/nextflow
+
+     - name: check nextflow installed
+       run: $SRC_DIR/nextflow -v
+
