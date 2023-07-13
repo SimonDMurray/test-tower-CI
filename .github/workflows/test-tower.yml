@@ -13,11 +13,11 @@ jobs:
       SRC_DIR: $GITHUB_WORKSPACE/src
 
     steps:     
-      - name: build source dir
-        run: mkdir -p $SRC_DIR
-
       - name: checkout repo
         uses: actions/checkout@v3
+
+      - name: build source dir
+        run: mkdir -p $SRC_DIR
 
       - name: install nextflow
         run: |
