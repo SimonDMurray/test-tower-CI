@@ -25,6 +25,6 @@ jobs:
           chmod u+x $SRC_DIR/nextflow
           $SRC_DIR/nextflow
 
-     - name: check nextflow installed
-       run: $SRC_DIR/nextflow -v
+      - name: check nextflow installed
+        run: $SRC_DIR/nextflow -v
 
