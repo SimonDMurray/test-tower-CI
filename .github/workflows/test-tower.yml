@@ -12,6 +12,9 @@ jobs:
       image: nextflow/nextflow:23.06.0-edge
 
     steps:     
+      - name: check git exists
+        run: which git
+
       - name: checkout repo
         uses: actions/checkout@v3
 
